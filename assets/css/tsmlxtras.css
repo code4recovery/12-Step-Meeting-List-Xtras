@@ -1,0 +1,129 @@
+:root {
+  --bs-blue: #0d6efd;
+  --bs-indigo: #6610f2;
+  --bs-purple: #6f42c1;
+  --bs-pink: #d63384;
+  --bs-red: #dc3545;
+  --bs-orange: #fd7e14;
+  --bs-yellow: #ffc107;
+  --bs-green: #198754;
+  --bs-teal: #20c997;
+  --bs-cyan: #0dcaf0;
+  --bs-white: #fff;
+  --bs-gray: #6c757d;
+  --bs-gray-dark: #343a40;
+  --bs-gray-100: #f8f9fa;
+  --bs-gray-200: #e9ecef;
+  --bs-gray-300: #dee2e6;
+  --bs-gray-400: #ced4da;
+  --bs-gray-500: #adb5bd;
+  --bs-gray-600: #6c757d;
+  --bs-gray-700: #495057;
+  --bs-gray-800: #343a40;
+  --bs-gray-900: #212529;
+  --bs-primary: #0d6efd;
+  --bs-secondary: #6c757d;
+  --bs-success: #198754;
+  --bs-info: #0dcaf0;
+  --bs-warning: #ffc107;
+  --bs-danger: #dc3545;
+  --bs-light: #f8f9fa;
+  --bs-dark: #212529;
+  --bs-primary-rgb: 13, 110, 253;
+  --bs-secondary-rgb: 108, 117, 125;
+  --bs-success-rgb: 25, 135, 84;
+  --bs-info-rgb: 13, 202, 240;
+  --bs-warning-rgb: 255, 193, 7;
+  --bs-danger-rgb: 220, 53, 69;
+  --bs-light-rgb: 248, 249, 250;
+  --bs-dark-rgb: 33, 37, 41;
+  --bs-white-rgb: 255, 255, 255;
+  --bs-black-rgb: 0, 0, 0;
+  --bs-body-color-rgb: 33, 37, 41;
+  --bs-body-bg-rgb: 255, 255, 255;
+  --bs-font-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
+  --bs-body-font-family: var(--bs-font-sans-serif);
+  --bs-body-font-size: 1rem;
+  --bs-body-font-weight: 400;
+  --bs-body-line-height: 1.5;
+  --bs-body-color: #212529;
+  --bs-body-bg: #fff;
+}
+
+/* Google Map */
+.tsmlx-gmap {
+  margin-top: 0;
+}
+.tsmlx-gmap .tsmlx-map-container {
+  position: relative;
+}
+.tsmlx-gmap .tsmlx-map-container .tsmlx-map {
+  margin-left: calc(-50vw + 50%);
+  max-width: 100vw;
+  height: 400px;
+  width: 100vw;
+}
+.tsmlx-gmap .tsmlx-map-container .type-description {
+  letter-spacing: 0.2em;
+}
+.tsmlx-gmap .tsmlx-map-container .tsmlx-map-overlay svg {
+  height: 1.2em;
+  width: 1.2em;
+}
+
+/* Meetings Table */
+.table-meetings-group {
+  border-width: 0px;
+}
+.table-meetings-group.mobile-table {
+  border-width: 0;
+}
+.table-meetings-group.mobile-table tr.meetingrow .calendar-display small.time {
+  white-space: nowrap;
+}
+.table-meetings-group tbody tr.meetingrow .calendar-display:hover {
+  background-color: rgb(var(--tsmlx-primary-rgb), 0.1);
+}
+.table-meetings-group tbody tr.meetingrow td.tsmlx-compound {
+  vertical-align: top;
+  white-space: nowrap;
+}
+.table-meetings-group tbody tr.meetingrow td.time_formatted {
+  white-space: nowrap;
+}
+.table-meetings-group tbody tr.meetingrow td .accordion-indicator {
+  vertical-align: top;
+}
+.table-meetings-group tbody tr.meetingrow td svg {
+  height: 1.5em;
+  width: 1em;
+  fill: currentColor;
+  vertical-align: top;
+}
+.table-meetings-group tbody tr.meetingrow td svg.down {
+  display: inline;
+}
+.table-meetings-group tbody tr.meetingrow td svg.right {
+  display: none;
+}
+.table-meetings-group tbody tr.meetingrow td .collapsed svg.right {
+  display: inline;
+}
+.table-meetings-group tbody tr.meetingrow td .collapsed svg.down {
+  display: none;
+}
+
+#meeting .page-header h2 {
+  margin-bottom: 0;
+  display: inline-block;
+}
+#meeting .page-header .attendance-option {
+  font-weight: 600;
+}
+#meeting svg {
+  height: 1.4em;
+  width: 1.4em;
+  fill: currentColor;
+}

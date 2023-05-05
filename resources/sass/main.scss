@@ -1,0 +1,120 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.txmlx {
+  a {
+    color: var(--tsmlx-primary) !important;
+  }
+  svg {
+    @apply tw-inline-block tw-h-4 tw-w-4 tw-fill-current
+  }
+  .badge {
+    @apply tw-font-normal tw-py-1 tw-px-2
+  }
+}
+.invis {
+  @apply tw-hidden
+}
+/* Google Map */
+.tsmlx-gmap {
+  @apply tw-mt-0;
+  .tsmlx-map-container {
+    position: relative;
+    .tsmlx-map {
+      margin-left: calc(-50vw + 50%);
+      max-width: 100vw;
+      height: 400px;
+      width: 100vw;
+    }
+    .type-description {
+      @apply tw-tracking-widest
+    }
+    .tsmlx-map-overlay {
+      svg {
+        @apply tw-h-5 tw-w-5
+      }
+    }
+  }
+}
+/* Meetings Table */
+.table-meetings {
+  th.day {
+    @apply tw-sticky tw-top-0
+  }
+  & > td {
+    @apply last:tw-text-right
+  }
+}
+.table-meetings-group {
+  border-width: 0px;
+  &.mobile-table {
+    tr.meetingrow {
+      .badge {
+        @apply tw-whitespace-normal tw-inline
+      }
+      .calendar-display {
+        small.time {
+          @apply tw-whitespace-nowrap
+        }
+      }
+    }
+    @apply tw-border-none
+  }
+  tbody {
+    tr {
+      &.meetingrow {
+        .calendar-display:hover {
+          background-color: rgb(var(--tsmlx-primary-rgb), .1);
+        }
+        td {
+          &.tsmlx-compound {
+            @apply tw-align-top tw-whitespace-nowrap
+          }
+          &.time_formatted {
+            @apply tw-whitespace-nowrap
+          }
+          .accordion-indicator {
+            @apply tw-align-top
+          }
+          svg {
+            height: 1.5em;
+            width: 1em;
+            fill: currentColor;
+            vertical-align: top;
+          }
+          svg.down {
+            display: inline;
+          }
+          svg.right {
+            display: none;
+          }
+          .collapsed {
+            svg.right {
+              display: inline;
+            }
+            svg.down {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+#meeting {
+  .page-header {
+    h2 {
+      margin-bottom: 0;
+      display: inline-block;
+    }
+    .attendance-option {
+      font-weight: 600;
+    }
+  }
+  svg {
+    height: 1.4em;
+    width: 1.4em;
+    fill: currentColor;
+  }
+}
