@@ -50,7 +50,7 @@
 			</li>
 		<?php endforeach; ?>
 	</ul>
-	<?php if ($data->add_another_enabled === true): ?>
+	<?php if (property_exists($data, 'add_another_enabled')): ?>
 		<div class="tw-border tw-border-solid tw-border-gray-300 tw-rounded-md tw-p-4 tw-flex tw-gap-2">
 			<input type="text" name="keyAdd" />
 			<input type="text" name="valAdd" />

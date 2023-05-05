@@ -99,14 +99,9 @@ if ( ! class_exists( 'TSMLX_Shortcodes' ) ) {
 		 * @return void
 		 */
 		public function assets(): void {
-			// Enqueue the frontend 12 step meeting list javascript
-			wp_enqueue_style( 'tsmlxtras-front', $this->paths['plugin_url'] . 'assets/css/tsmlxtras.css' );
-			wp_enqueue_style( 'tsmlxtras-frontnew', $this->paths['plugin_url'] . 'assets/css/main.css' );
-			// Register bootstrap js
-			wp_register_script('tsmlxtras-bootstrapjs', $this->paths['plugin_url'] . 'assets/css/bootstrap-5.1.3/dist/js/bootstrap.js', array('jquery'), NULL, TRUE);
-			// Enqueue the script
-			wp_enqueue_script('tsmlxtras-bootstrapjs');
-			// Register our frontend script
+			// Frontend styles
+			wp_enqueue_style( 'tsmlxtras-front', $this->paths['plugin_url'] . 'assets/css/main.css' );
+			// Frontend script
 			wp_register_script('tsmlxtras-frontjs', $this->paths['plugin_url'] . 'assets/js/tsmlxtras-frontend.js', array('jquery'), NULL, TRUE);
 			// Enqueue the script
 			wp_enqueue_script('tsmlxtras-frontjs');

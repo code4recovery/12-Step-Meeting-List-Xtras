@@ -11,6 +11,7 @@
  * @package TSMLXtras\Blocks
  */
 
+// todo Figure out why regions block url is wrong
 namespace TSMLXtras\Blocks;
 
 if ( ! class_exists( 'TSMLX_Blocks' ) ) {
