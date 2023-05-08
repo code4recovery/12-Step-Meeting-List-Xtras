@@ -131,17 +131,23 @@ if (!empty($tsmlx_plugin_settings['tsml_slug'])) {
  * Add custom types from config
  */
 function tsmlx_types() {
-	global $tsmlx_plugin_settings;
+	global $tsmlx_plugin_settings, $tsml_programs, $tsml_program;
+	foreach ($tsml_programs[$tsml_program]['types'] as $key => $label) {
+		$types_defaults[] = [
+			'key' => $key,
+			'label' => $label,
+			'exclude' => false,
+		];
+	}
+	define('TSML_TYPES_DEFAULTS', $types_defaults);
 	if (!empty($tsmlx_plugin_settings['types_order'])) {
 		$tsmlx_types = json_decode($tsmlx_plugin_settings['types_order'], true);
+		$tsml_programs[$tsml_program]['types'] = [];
 		foreach ($tsmlx_types as $k => $v) {
-			if (!empty($v['custom'])) {
-				$custom_types[$v['key']] = $v['label'];
+			if ($v['exclude'] !== true) {
+				$tsml_programs[$tsml_program]['types'][$v['key']] = $v['label'];
 			}
-		}
-		if (function_exists('tsml_custom_types') && !empty($custom_types)) {
-			tsml_custom_types($custom_types);
 		}
 	}
 }
-add_action('init', 'tsmlx_types');
+add_action('init', 'tsmlx_types', 20);

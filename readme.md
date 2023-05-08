@@ -38,7 +38,7 @@ It started as a catch-all plugin for the tweaks I wanted while building the dist
 The best way to install this plugin is via [its home page](https://wordpress.org/plugins/12-step-meeting-list/) in the WordPress Plugin Directory.
 
 ## Support
-Need help? Please [open a new discussion](https://github.com/anchovie91471/tsmlxtras/discussions).
+Need help? Please [open a new discussion](https://github.com/anchovie91471/12-Step-Meeting-List-Xtras/discussions).
 
 ## Settings
 ![](screenshot-1.png)

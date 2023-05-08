@@ -234,14 +234,11 @@ if ( ! function_exists( 'tsmlx_get_regions_list' ) ) {
 	 * @return void
 	 */
 	function tsmlx_get_regions_list( $args ) {
-		$showcount = FALSE;
-		if ( array_key_exists( 'showCount', $args ) ) {
-			$showcount = TRUE;
-		}
 		echo wp_list_categories( [
-			'taxonomy'   => 'tsml_region',
-			'show_count' => $showcount,
-			'title_li'   => '<h3>' . __( 'Regions', 'textdomain' ) . '</h3>',
+				'walker' => new \TSMLXtras\Blocks\Classes\TSMLX_Regions_Walker(),
+				'taxonomy'   => 'tsml_region',
+				'show_count' => $args['showCount'],
+				'title_li'   => '<h3>' . __( 'Regions', 'textdomain' ) . '</h3>',
 		] );
 	}
 }

@@ -11,8 +11,9 @@
  * @package TSMLXtras\Blocks
  */
 
-// todo Figure out why regions block url is wrong
 namespace TSMLXtras\Blocks;
+
+use TSMLXtras\Blocks\Classes\TSMLX_Regions_Walker;
 
 if ( ! class_exists( 'TSMLX_Blocks' ) ) {
 	class TSMLX_Blocks {

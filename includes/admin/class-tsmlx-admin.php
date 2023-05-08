@@ -124,6 +124,7 @@ if ( ! class_exists( 'TSMLX_Admin' ) ) {
 			add_filter( 'plugin_action_links_' . $this->paths['plugin_basename'], [ $this, 'plugin_action_links', ] );
 			add_action( 'admin_enqueue_scripts', [ $this, 'admin_assets' ] );
 			add_action( 'wp_head', [ $this, 'enqueue_colors' ] );
+			add_action( 'admin_head', [ $this, 'enqueue_colors' ] );
 			add_action( "admin_head", [ $this, 'help_tabs' ] );
 		}
 		
@@ -140,10 +141,10 @@ if ( ! class_exists( 'TSMLX_Admin' ) ) {
 				// enqueue the color picker
 				wp_enqueue_style( 'wp-color-picker' );
 				// enqueue the admin CSS
-				wp_enqueue_style( $this->plugin_slug_underscores . '-admincss', $this->paths['plugin_url'] . 'assets/css/tsmlxtras-admin.css', [], $this->plugin_info['Version'] );
+				wp_enqueue_style( $this->plugin_slug_underscores . '-admincss', $this->paths['plugin_url'] . 'assets/css/' . $this->plugin_slug_underscores . '-admin.css', [], $this->plugin_info['Version'] );
 				wp_enqueue_script( 'jquery-ui-core' );
 				wp_enqueue_script('jquery-ui-sortable' );
-				wp_enqueue_script( $this->plugin_slug_underscores . '-adminjs', $this->paths['plugin_url'] . 'assets/js/tsmlxtras-admin.js', [ 'wp-color-picker' ], $this->plugin_info['Version'], TRUE );
+				wp_enqueue_script( $this->plugin_slug_underscores . '-adminjs', $this->paths['plugin_url'] . 'assets/js/' . $this->plugin_slug_underscores . '-admin.js', [ 'wp-color-picker' ], $this->plugin_info['Version'], TRUE );
 			}
 		}
 		
@@ -185,14 +186,6 @@ if ( ! class_exists( 'TSMLX_Admin' ) ) {
 		 */
 		public function register_settings(): void {
 			global $tsml_column_defaults, $tsml_programs, $tsml_program;
-			$types_defaults = [];
-			foreach ($tsml_programs[$tsml_program]['types'] as $key => $label) {
-				$types_defaults[] = [
-					'key' => $key,
-					'label' => $label,
-					'exclude' => false,
-				];
-			}
 			$before_section  = '<div class="postbox"><div class="postbox-header"><h2>';
 			$before_section2 = '</h2></div><div class="inside">';
 			$after_section   = '</div></div>';
@@ -266,14 +259,14 @@ if ( ! class_exists( 'TSMLX_Admin' ) ) {
 			);
 			add_settings_field(
 				'types_order',
-				'Types order',
+				'Meeting Types',
 				[ $this->form_loader, 'draggable_list' ],
 				$this->plugin_slug_underscores . '_settings_page',
 				$this->plugin_slug_underscores . '_tsml_settings_section',
 				[
 					'id'          => 'types_order',
 					'description' => 'Drag and drop to reorder meeting types in the meeting list.',
-					'defaults' => $types_defaults,
+					'defaults' => TSML_TYPES_DEFAULTS,
 					'add_another_enabled' => true,
 					'deletable' => true,
 					'draggables' => !empty($this->plugin_options['types_order']) ? json_decode($this->plugin_options['types_order'], true) : $types_defaults,
@@ -457,7 +450,7 @@ if ( ! class_exists( 'TSMLX_Admin' ) ) {
 			}
 			
 			$screen = get_current_screen();
-			
+
 			/**
 			 * Overview Tab
 			 */

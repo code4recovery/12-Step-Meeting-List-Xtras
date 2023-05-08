@@ -58,8 +58,13 @@ This plugin includes a bunch of tweaks I needed for my district and area website
 == Screenshots ==
 
 1. Plugin Settings Page
-2. Gutengerg blocks
-3. Gutengerg blocks
+2. Gutenberg blocks (frontend)
+3. Gutenberg blocks (frontend)
+4. 12 Step Meeting List Xtras Meeting Table
+5. 12 Step Meeting List Xtras Meeting Table (Meeting row open)
+6. Gutenberg block (WP admin view)
+7. Gutenberg block (WP admin view)
+8. Yoost Replacement Tokens (WP admin view)
 
 == Changelog ==
 

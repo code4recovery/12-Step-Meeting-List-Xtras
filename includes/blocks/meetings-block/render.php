@@ -27,10 +27,9 @@ if ( in_array( $blockType, $shortcode_blocks ) ) {
 // Show or hide counts on regions list
 if ( $blockType === 'tsmlx_get_regions_list' ) {
 	if ( $attributes['showCount'] ) {
-		$args['showCount'] = TRUE;
+		$args['showCount'] = true;
 	}
 }
-
 $classes = ''
 ?>
 

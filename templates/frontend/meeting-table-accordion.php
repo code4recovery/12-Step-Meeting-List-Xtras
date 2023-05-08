@@ -29,7 +29,7 @@ $hidden_cols     = [
 				<thead>
 				<tr class="tw-uppercase">
 					<th class="day tw-p-2 tw-border-0 tw-bg-tsmlx-headers tw-border-b tw-border-solid tw-border-black" colspan="<?php echo count( $data->tsml_columns ) + 1; ?>">
-						<h5 class="tw-mb-0 tw-text-left <?php if (!empty($data->header_invert)) echo 'tw-text-white'; ?>"><?php echo $data->tsml_days[ $daynum ]; ?></h5>
+						<h5 class="tw-my-0 tw-text-left <?php if (!empty($data->header_invert)) echo 'tw-text-white'; ?>"><?php echo $data->tsml_days[ $daynum ]; ?></h5>
 					</th>
 				</tr>
 				</thead>

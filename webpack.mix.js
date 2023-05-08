@@ -20,12 +20,10 @@ mix.webpackConfig({
     // }
 });
 
-mix.js('resources/js/index.js', 'assets/js')
-    .js('resources/js/tsmlxtras-admin.js', 'assets/js')
+mix.js('resources/js/tsmlxtras-admin.js', 'assets/js')
     .js('resources/js/tsmlxtras-frontend.js', 'assets/js')
     .sass('resources/sass/main.scss', 'assets/css')
     .sass('resources/sass/tsmlxtras-admin.scss', 'assets/css')
-    .sass('assets/css/tsmlxtras.scss', 'assets/css/tsmlxtras.css')
     .tailwind();
 
 mix.block("resources/blocks/meetings-block/index.js", "includes/blocks/meetings-block/index.js");

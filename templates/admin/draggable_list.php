@@ -40,7 +40,7 @@
 				<span class="tw-w-28 tw-flex tw-flex-col tw-items-center">
 					<input type="checkbox" id="<?php echo $column['key']; ?>_show" <?php echo $column['exclude'] === true ? 'checked="checked"' : '' ?> name="<?php echo $data->id; ?>_show[]">
 				</span>
-				<?php if (property_exists($data, 'deletable') && !in_array($column['key'], array_column($data->defaults, 'key'))): ?>
+				<?php if ((property_exists($data, 'deletable')) && (!in_array($column['key'], array_column($data->defaults, 'key')))): ?>
 					<a class="delete-button tw-text-red-300 hover:tw-text-red-500 tw-cursor-pointer tw-uppercase tw-text-sm" data-value="<?php echo $column['key']; ?>">
 						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="tw-w-5 tw-h-5">
 							<path fill-rule="evenodd" d="M16.5 4.478v.227a48.816 48.816 0 013.878.512.75.75 0 11-.256 1.478l-.209-.035-1.005 13.07a3 3 0 01-2.991 2.77H8.084a3 3 0 01-2.991-2.77L4.087 6.66l-.209.035a.75.75 0 01-.256-1.478A48.567 48.567 0 017.5 4.705v-.227c0-1.564 1.213-2.9 2.816-2.951a52.662 52.662 0 013.369 0c1.603.051 2.815 1.387 2.815 2.951zm-6.136-1.452a51.196 51.196 0 013.273 0C14.39 3.05 15 3.684 15 4.478v.113a49.488 49.488 0 00-6 0v-.113c0-.794.609-1.428 1.364-1.452zm-.355 5.945a.75.75 0 10-1.5.058l.347 9a.75.75 0 101.499-.058l-.346-9zm5.48.058a.75.75 0 10-1.498-.058l-.347 9a.75.75 0 001.5.058l.345-9z" clip-rule="evenodd" />
@@ -51,10 +51,20 @@
 		<?php endforeach; ?>
 	</ul>
 	<?php if (property_exists($data, 'add_another_enabled')): ?>
-		<div class="tw-border tw-border-solid tw-border-gray-300 tw-rounded-md tw-p-4 tw-flex tw-gap-2">
-			<input type="text" name="keyAdd" />
-			<input type="text" name="valAdd" />
-			<input type="button" class="button-primary" value="Add Another" id="tsmlxtras_add_another" />
+		<div class="tw-border tw-border-solid tw-border-gray-300 tw-rounded-md tw-p-4">
+			<div class="tw-flex tw-flex-row tw-gap-2">
+				<label class="tw-basis-1/3">
+					<span class="tw-block tw-text-xs tw-font-bold ">Key</span>
+					<input class="tw-basis-1/3" type="text" id="keyAdd" name="keyAdd" />
+				</label>
+				<label class="tw-basis-1/3">
+					<span class="tw-block tw-text-xs tw-font-bold ">Label</span>
+					<input class="tw-basis-1/3" type="text" id="valAdd" name="valAdd" />
+				</label>
+				<div class="tw-flex tw-justify-start tw-items-end">
+					<input type="button" class="button-primary" value="Add Another" id="tsmlxtras_add_another" />
+				</div>
+			</div>
 		</div>
 		<small class="tw-text-sm tw-text-red-500 tw-italic tw-mt-2 tw-block">Items are inserted at the last position that does NOT have "exclude" checked.</small>
 	<?php endif; ?>
@@ -91,14 +101,14 @@
         })
 
         // Add another button watcher
-		// @todo Ensure additional types are saved in the correct order
 		addAnotherButton.on('click', function (e) {
             e.preventDefault()
             let key = $("input[name='keyAdd']").val()
             let val = $("input[name='valAdd']").val()
+			// New <Li> html
 			if (key && val) {
                 var li  = `
-				<li class="ui-state-default hover:tw-bg-zinc-50 tw-flex tw-items-center tw-justify-start tw-justify-items-start tw-cursor-grab tw-w-full tw-gap-2">
+				<li id="${key}" class="ui-state-default hover:tw-bg-zinc-50 tw-flex tw-items-center tw-justify-start tw-justify-items-start tw-cursor-grab tw-w-full tw-gap-2">
                 	<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="tw-inline-block tw-w-4 tw-h-4">
                 		<path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"/>
                 	</svg>
@@ -107,11 +117,14 @@
 					<span class="tw-w-28 tw-flex tw-flex-col tw-items-center">
 					<input type="checkbox" id="${key}_show" name="${id}_show[]">
 				</li>`
-				$(li).insertAfter($("#sortable_"+id+" #sortable li:not('.tw-line-through'):last"))
-                sortableList.append(li)
-                sortableList.sortable('refresh')
-				itemOrder.push({key:key, label:val, exclude:false, custom:true})
+				var lastAcive = $("div#sortable_"+id+" ul#sortable li:not('.tw-line-through')").last()
+				// Insert item into sortable list
+				$(li).insertAfter(lastAcive)
+                itemOrder.push({key:key, label:val, exclude:false, custom:true})
+                sortableList.trigger('sortupdate')
                 updateValueField()
+				$('#keyAdd').val('')
+				$('#valAdd').val('')
 			} else {
                 alert('Key and Label values cannot be empty. Please fill both fields.')
 			}
