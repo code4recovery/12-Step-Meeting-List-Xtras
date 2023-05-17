@@ -535,7 +535,7 @@ if ( ! class_exists( 'TSMLX_Admin' ) ) {
 		}
 		
 		/**
-		 * Queues a rewrite flush on next load. No sanitization performed.
+		 * Queues a rewrite flush on next load.
 		 *
 		 * @param $input
 		 *

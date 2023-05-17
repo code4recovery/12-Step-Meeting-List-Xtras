@@ -11,6 +11,8 @@
  * @package TSMLXtras\Shortcodes
  */
 
+// @todo Figure out why default day is wrong on meeting table accordion
+
 namespace TSMLXtras\Shortcodes;
 
 use TSMLXtras\TSMLXtras;

@@ -9,7 +9,7 @@
  */
 
 ?>
-<h3>12 Step Meeting List Xtras - Settings</h3>
+<h3>Settings</h3>
 <h4>12 Step Meeting List Settings</h4>
 <p class="tw-mt-0">These settings give you some control over the main 12 Step Meeting List plugin that are normally done via code edits. The settings provide the same level of control, but with a UI.</p>
 <h5 class="tw-pb-0 tw-underline">TSML columns</h5>

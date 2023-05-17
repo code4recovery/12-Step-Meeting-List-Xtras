@@ -43,7 +43,7 @@ if ( ! class_exists( 'TSMLX_Disable_Meetings_Page' ) ) {
 		 */
 		public function __construct(TSMLXtras $TSMLXtras) {
 			$this->TSMLXtras = $TSMLXtras;
-			$this->disabled = array_key_exists('disable_meetings_archive', $this->TSMLXtras->get_setting());
+			$this->disabled = $this->TSMLXtras->get_setting('disable_meetings_archive');
 		}
 		
 		/**

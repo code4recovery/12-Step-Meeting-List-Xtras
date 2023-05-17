@@ -23,15 +23,15 @@
 			<small id="reset_warning" class="tw-hidden w-full tw-text-red-700"><strong><em>You can uncheck this box to get your original values back. Once you save, your original values will lost.</em></strong></small>
 		</div>
 	</div>
-	<ul class="tw-list-none tw-m-0 tw-p-2 tw-bg-zinc-100 tw-rounded-sm tw-shadow-sm tw-flex tw-justify-start tw-gap-2 tw-font-bold" id="legend">
-		<li class="tw-w-36 tw-ml-8">Key</li>
-		<li class="tw-w-52">Label</li>
-		<li class="tw-w-28 tw-flex tw-flex-col tw-items-center">Turn Off</li>
+	<ul class="tw-list-none tw-m-0 tw-p-2 tw-bg-c4r-gray/10 tw-rounded-sm tw-shadow-sm tw-flex tw-justify-start tw-gap-2 tw-font-bold" id="legend">
+		<li class="tw-w-36 tw-ml-8 tw-mb-0">Key</li>
+		<li class="tw-w-52 tw-mb-0">Label</li>
+		<li class="tw-w-28 tw-mb-0 tw-flex tw-flex-col tw-items-center">Turn Off</li>
 	</ul>
 	<ul class="tw-list-none tw-m-0 tw-p-2" id="sortable">
 		<?php foreach ( $data->draggables as $order => $column ): ?>
 			<li id="<?php echo $column['key']; ?>"
-				class="ui-state-default hover:tw-bg-zinc-50 tw-flex tw-items-center tw-justify-start tw-justify-items-start tw-cursor-grab tw-w-full tw-gap-2<?php echo $column['exclude'] === true ? ' tw-line-through' : '' ?>">
+				class="ui-state-default hover:tw-bg-c4r-gray/5 tw-flex tw-items-center tw-justify-start tw-justify-items-start tw-cursor-grab tw-w-full tw-gap-2<?php echo $column['exclude'] === true ? ' tw-line-through' : '' ?>">
 				<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="tw-inline-block tw-w-4 tw-h-4">
 					<path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"/>
 				</svg>
@@ -108,7 +108,7 @@
 			// New <Li> html
 			if (key && val) {
                 var li  = `
-				<li id="${key}" class="ui-state-default hover:tw-bg-zinc-50 tw-flex tw-items-center tw-justify-start tw-justify-items-start tw-cursor-grab tw-w-full tw-gap-2">
+				<li id="${key}" class="ui-state-default hover:tw-bg-c4r-gray/5 tw-flex tw-items-center tw-justify-start tw-justify-items-start tw-cursor-grab tw-w-full tw-gap-2">
                 	<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="tw-inline-block tw-w-4 tw-h-4">
                 		<path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"/>
                 	</svg>

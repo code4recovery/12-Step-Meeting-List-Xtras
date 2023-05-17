@@ -19,7 +19,10 @@ module.exports = {
 				"tsmlx-headers": 'rgb(var(--tsmlx-headers-rgb) / <alpha-value>)',
 				"tsmlx-primary": 'rgb(var(--tsmlx-primary-rgb) / <alpha-value>)',
 				"tsmlx-secondary": 'rgb(var(--tsmlx-secondary-rgb) / <alpha-value>)',
-				"tsmlx-tertiary": 'rgb(var(--tsmlx-tertiary-rgb) / <alpha-value>)'
+				"tsmlx-tertiary": 'rgb(var(--tsmlx-tertiary-rgb) / <alpha-value>)',
+                "c4r-blue": 'rgb(var(--c4r-blue) / <alpha-value>)',
+                "c4r-lightblue": 'rgb(var(--c4r-lightblue) / <alpha-value>)',
+                "c4r-gray": 'rgb(var(--c4r-gray) / <alpha-value>)',
 			}
 		},
 	},

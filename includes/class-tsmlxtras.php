@@ -203,10 +203,15 @@ if ( ! class_exists( 'TSMLXtras' ) ) {
 		 * @return mixed
 		 */
 		public function get_setting($key = '') {
+            // All options.
 			if (empty($key)) {
 				return $this->plugin_options;
 			}
-			return !empty($this->plugin_options[$key]) ? $this->plugin_options[$key] : NULL;
+            // Specific option or false
+			if (empty($this->plugin_options[$key])) {
+				return false;
+			}
+			return $this->plugin_options[$key];
 		}
 		
 		/**

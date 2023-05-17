@@ -48,7 +48,7 @@ if ( ! class_exists( 'TSMLX_Xtrafields' ) ) {
 		public function __construct(TSMLXtras $TSMLXtras) {
 			$this->TSMLXtras = $TSMLXtras;
 			$this->plugin_info = $this->TSMLXtras->get_info();
-			$this->group_id_enabled = array_key_exists('enable_group_id', $this->TSMLXtras->get_setting());
+			$this->group_id_enabled = $this->TSMLXtras->get_setting('enable_group_id');
 		}
 		
 		/**

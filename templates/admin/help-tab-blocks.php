@@ -9,7 +9,7 @@
  */
 
 ?>
-<h3>12 Step Meeting List Xtras - Block editor (Gutenberg) blocks</h3>
+<h3>Block editor (Gutenberg) blocks</h3>
 <p><strong>Note: This is simply a convenient way to add the same block provided with shortcodes. Using the blocks gives you a preview in the block editor, where shortcodes do not.</strong></p>
 <h4>Instructions</h4>
 <ul>
@@ -20,7 +20,7 @@
 </ul>
 <h4>Blocks include:</h4>
 <div style="display: flex; flex-direction: row; gap: 2rem;">
-    <div style="width: 50%;float:left:">
+    <div style="width: 70%;float:left:">
         <ol>
             <li><strong>Xtras Meeting Table:</strong> An accordion style table of all meetings. (see Shortcodes tab for a preview)
                 <ul>
@@ -55,7 +55,7 @@
             </li>
         </ol>
     </div>
-    <div style="width:50%;float:left:">
+    <div style="width:30%;float:left:">
         <p><em>Search block add sidebar for "Meeting Blocks" or look under "Embed" category.</em></p>
         <img alt="Search block add sidebar for Meeting Blocks or look under Embed category" style="width: 100%; margin-bottom: 1rem;" src="<?php echo $data->plugin_url ?>screenshot-6.png">
         <p><em>Meeting Blocks settings example.</em></p>
