@@ -196,7 +196,7 @@ $hidden_cols     = [
 															<path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"/>
 														</svg><?php _e( 'Join by Phone', '12-step-meeting-list' ) ?>
 													</a>
-													<?php if ( $meeting['conference_phone_notes'] ) { ?>
+													<?php if ( !empty($meeting['conference_phone_notes'] )) { ?>
 														<div class="<?php echo tsml_xtras_get_classes('notes'); ?>">
 															<div class="tw-flex tw-items-center tw-gap-2">
 																<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="tw-flex-shrink-0 tw-w-6 tw-h-6 tw-text-tsmlx-secondary tw-inline-block">
@@ -213,7 +213,7 @@ $hidden_cols     = [
 										</div>
 									<?php } ?>
 									<!-- Address -->
-									<?php if ( $meeting['attendance_option'] !== 'online' ) { ?>
+									<?php if ( !empty($meeting['attendance_option'] !== 'online' )) { ?>
 										<div id="meeting-address" class="<?php echo tsml_xtras_get_classes( 'card' ) ?>">
 											<div class="<?php echo tsml_xtras_get_classes( 'card_header' ) ?>">
 												<span class="<?php echo tsml_xtras_get_classes( 'card_header_svg' ) ?> tw-text-tsmlx-primary">
@@ -227,7 +227,7 @@ $hidden_cols     = [
 											<div class="tw-card-body tw-p-4">
 												<?php //d($meeting); ?>
 												<?php echo tsml_format_address($meeting['formatted_address']); ?>
-												<?php if ( $meeting['location_notes'] ) { ?>
+												<?php if ( !empty($meeting['location_notes'] )) { ?>
 													<div class="<?php echo tsml_xtras_get_classes('notes'); ?>">
 														<div class="tw-flex tw-items-center tw-gap-2">
 															<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="tw-flex-shrink-0 tw-w-6 tw-h-6 tw-text-tsmlx-secondary tw-inline-block">

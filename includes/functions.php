@@ -279,8 +279,6 @@ if ( ! function_exists( 'tsmlxtras_expand_meeting_types' ) ) {
 	 * @return array
 	 */
 	function tsmlxtras_expand_meeting_types( $types, $types_order ) {
-		error_log(print_r($types, 1));
-		error_log(print_r($types_order, 1));
 		global $tsml_programs, $tsml_program;
 		foreach ($types_order as $order => $type) {
 			if ($type['key'] === 'ONL' || $type['key'] === 'TC') {
