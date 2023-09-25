@@ -269,7 +269,7 @@ if ( ! class_exists( 'TSMLX_Admin' ) ) {
 					'defaults' => TSML_TYPES_DEFAULTS,
 					'add_another_enabled' => true,
 					'deletable' => true,
-					'draggables' => !empty($this->plugin_options['types_order']) ? json_decode($this->plugin_options['types_order'], true) : $types_defaults,
+					'draggables' => !empty($this->plugin_options['types_order']) ? json_decode($this->plugin_options['types_order'], true) : TSML_TYPES_DEFAULTS,
 				]
 			);
 			// Schema Settings

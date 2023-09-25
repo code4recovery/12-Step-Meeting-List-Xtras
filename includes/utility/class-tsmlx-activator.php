@@ -86,11 +86,11 @@ if ( ! class_exists( 'TSMLX_Activator' ) ) {
 		 *
 		 * @return void
 		 */
-		public static function parent_plugin_not_active_notice(): void {
-			$class = 'notice notice-error';
-			$message = 'The TSML Xtras plugin requires the 12 Step Meeting List plugin to be active. Please activate the 12 Step Meeting List plugin and try again.';
-			
-			printf( '<div class="%1$s"><p>%2$s</p></div>', esc_attr( $class ), esc_html( $message ) );
-		}
+        public static function parent_plugin_not_active_notice(): void {
+            $class = 'notice notice-error';
+            $message = 'The TSML Xtras plugin requires the <a href="%s">12 Step Meeting List plugin</a> to be active. Please activate the 12 Step Meeting List plugin and try again.';
+
+            printf( '<div class="%1$s"><p>%2$s</p></div>', esc_attr( $class ), sprintf($message, './plugin-install.php?s=12%2520Step%2520Meeting%2520List&tab=search&type=term') );
+        }
 	}
 }

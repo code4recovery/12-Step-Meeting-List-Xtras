@@ -34,6 +34,7 @@ $tsml_contact_fields = [
 	'group_unique_id' => 'string',
 ];
 //append to contacts
+defined('TSML_GROUP_CONTACT_COUNT') or define('TSML_GROUP_CONTACT_COUNT', 3);
 for ($i = 1; $i <= TSML_GROUP_CONTACT_COUNT; $i++) {
 	foreach (['name', 'email', 'phone'] as $field) {
 		$tsml_contact_fields['contact_' . $i . '_' . $field] = $field == 'phone' ? 'phone' : 'string';
